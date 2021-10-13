@@ -27,7 +27,7 @@ export default class ViewHome{
             let obj = e.target;
             
             if(obj.classList.contains("next")){
-                let viewHome = new ViewNext();
+                new ViewNext();
             }
         })
     }

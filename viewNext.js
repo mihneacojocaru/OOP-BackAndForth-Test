@@ -28,7 +28,7 @@ export default class ViewNext{
             let obj = e.target;
             
             if(obj.classList.contains("previous")){
-                let viewHome = new ViewHome();
+                new ViewHome();
             }
         })
     }
