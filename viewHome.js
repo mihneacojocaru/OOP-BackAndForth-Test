@@ -6,11 +6,14 @@ export default class ViewHome{
         this.root = document.getElementById("root");
         this.root.innerHTML = "";
         this.root.innerHTML += this.createPage();
-        console.log("View Home");
-        this.changePage();
+
+        this.btnNext = document.querySelector(".next");
+
+        console.log("HOME");
+        this.btnNext.addEventListener("click",this.handleClick);
     }
 
-    createPage(){
+    createPage=()=>{
         let content = `
         <h1>TITLE</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ipsa saepe recusandae temporibus. Eveniet soluta quas nostrum repellat, natus vitae? Iure earum illo itaque ut pariatur excepturi vero adipisci explicabo!</p>
@@ -21,15 +24,16 @@ export default class ViewHome{
         return content;
     }
 
-    changePage(){
-        const buttonEvent = document.addEventListener("click", e => {
-            e.preventDefault();
+
+    handleClick=(e)=>{
+        e.preventDefault();
             let obj = e.target;
             
             if(obj.classList.contains("next")){
                 new ViewNext();
             }
-        })
+
+
     }
 
 }

@@ -6,8 +6,11 @@ export default class ViewNext{
         this.root = document.getElementById("root");
         this.root.innerHTML = "";
         this.root.innerHTML += this.createPage();
-        console.log("View Next");
-        this.changePage();
+        console.log("Next");
+        this.btnPrev = document.querySelector(".previous");
+
+        this.btnPrev.addEventListener("click",this.handleClick)
+
     }
 
     createPage(){
@@ -21,17 +24,16 @@ export default class ViewNext{
         return content;
     }
 
-    changePage(){
-        const buttonEvent = document.addEventListener("click", e => {
-            
-            e.preventDefault();
+    handleClick = e => {
+        e.preventDefault();
             let obj = e.target;
             
             if(obj.classList.contains("previous")){
                 new ViewHome();
             }
-        })
     }
+
+    
 
 
 
